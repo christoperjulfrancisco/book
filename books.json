@@ -16,5 +16,11 @@
     "title": "To Kill a Mockingbird",
     "author": "Harper Lee",
     "available": true
+  },
+  {
+    "id": 4,
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "available": true
   }
 ]
