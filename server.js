@@ -7,7 +7,7 @@ const errorHandler = require('./middleware/errorHandler');
 //Import Routes and Swagger
 const bookRoutes = require('./routes/bookRoutes');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./docs/swagger.json'); 
+const swaggerDocument = require('./docs/swagger.json');
 
 connectDB();
 

@@ -1,5 +1,6 @@
 const Book = require('../models/Book');
 const asyncHandler = require('express-async-handler'); 
+module.exports = router;
 
 const borrowBook = asyncHandler(async (req, res, next) => {
     const { borrower } = req.body;

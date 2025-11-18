@@ -1,5 +1,6 @@
 const helmet = require('helmet');
 const cors = require('cors');
+securityMiddleware(app);
 
 const securityMiddleware = (app) => {
     app.use(helmet());
