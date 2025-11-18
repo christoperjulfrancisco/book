@@ -1,10 +1,9 @@
-// models/Book.js
 const mongoose = require('mongoose');
 
 const BookSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: [true, 'Title is required'], // Input Validation
+        required: [true, 'Title is required'], 
         trim: true,
         maxlength: 100
     },
@@ -17,7 +16,7 @@ const BookSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    borrower: { // Added for the borrow functionality
+    borrower: { 
         type: String,
         default: null
     },

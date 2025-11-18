@@ -1,7 +1,5 @@
-// Example handler for POST /api/v1/borrow/:id
-
 const Book = require('../models/Book');
-const asyncHandler = require('express-async-handler'); // Utility to handle async try/catch
+const asyncHandler = require('express-async-handler'); 
 
 const borrowBook = asyncHandler(async (req, res, next) => {
     const { borrower } = req.body;
