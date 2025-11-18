@@ -1,31 +1,29 @@
-// server.js (The main entry point)
-require('dotenv').config(); // Load environment variables
+require('dotenv').config(); 
 const express = require('express');
 const connectDB = require('./config/db');
 const securityMiddleware = require('./middleware/security');
 const errorHandler = require('./middleware/errorHandler');
 
-// Import Routes and Swagger
+//Import Routes and Swagger
 const bookRoutes = require('./routes/bookRoutes');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./docs/swagger.json'); // Assume you created this file
+const swaggerDocument = require('./docs/swagger.json'); 
 
-// Connect to database
 connectDB();
 
 const app = express();
 
-// Global Middleware
+//Global Middleware
 app.use(express.json());
 securityMiddleware(app);
 
-// Documentation Route
+//Documentation Route
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Mount Router
+//Mount Router
 app.use('/api/v1/books', bookRoutes);
 
-// Custom Error Handler (MUST be last middleware)
+//Custom Error Handler
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
